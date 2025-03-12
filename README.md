@@ -1,9 +1,9 @@
-# The final project for ECE-563-Wireless-Communications-Network
+# The final project for ECE 563: Wireless Communications Network
 ---
 
 ## **Description**
 
-This repository contains the source code and documentation of my final project for ECE-563-Wireless-Communications-Network.
+This repository contains the source code and documentation of my final project for ECE 563 Wireless Communications Network.
 
 ---
 
