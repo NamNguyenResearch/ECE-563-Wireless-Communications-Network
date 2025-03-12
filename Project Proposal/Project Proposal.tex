@@ -1,0 +1,226 @@
+\documentclass[12pt,onecolumn,letterpaper]{IEEEtran}
+%\usepackage{citesort}
+%\usepackage[utf8x]{inputenc}
+\usepackage{color}
+\usepackage{url}
+\usepackage[latin9]{inputenc}
+\usepackage{epstopdf}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{wrapfig}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{mathrsfs}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{tabulary}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{csquotes}
+
+\PassOptionsToPackage{bookmarks={false}}{hyperref}
+
+\IEEEoverridecommandlockouts
+%\usepackage{cite}
+%\usepackage{amsmath,amssymb,amsfonts}
+%\usepackage{algorithmic}
+%\usepackage{graphicx}
+%\usepackage{epstopdf}
+%\usepackage{textcomp}
+%\usepackage{xcolor}
+%\usepackage{url}
+%\usepackage{subcaption}
+%\usepackage{subfigure}
+
+\setlength{\topmargin}{-0.5in} \setlength{\headheight}{0in} \setlength{\headsep}{0in}
+\setlength{\textheight}{9.6in}
+
+\setlength{\oddsidemargin}{-0.375in}
+\setlength{\evensidemargin}{-0.375in}
+\setlength{\textwidth}{7.0in}
+
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+   T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+
+\newcommand{\comment}[1]{ }
+
+\DeclareMathOperator*{\argmin}{argmin}
+\captionsetup[table]{
+  labelsep=newline,
+  justification=centering,
+  singlelinecheck=false,
+}
+
+\newcommand\subparagraph{%
+  \@startsection{subparagraph}{0}
+  {\parindent}
+  {0ex \@plus 0ex \@minus 0ex}
+  {-1em}
+  {\normalfont\normalsize\bfseries}}
+\makeatother
+
+\usepackage{titlesec}
+\titlespacing*{\section}
+{0pt}{1.2ex}{0ex} % indent; before subsec; after sub
+\titlespacing*{\subsection}
+{0pt}{1ex}{0ex}  % indent; before subsec; after sub
+\titlespacing*{\subsubsection}
+{0pt}{0ex}{0ex} % indent; before subsec; after sub
+
+
+%\usepackage{titlesec}
+\titleformat{\section}
+{\color{blue}\normalfont\bfseries}
+{\color{blue}\thesection}{1em}{}
+
+\begin{document}
+
+
+\title{\bf Performance Enhancement and Security Analysis of Satellite FSO/QKD Systems using HAP-based Relaying and ARQ}
+
+\author{Project Proposal of 563 Class\\
+%Author: Nam Nguyen\\
+%\small Oregon State University, Corvallis, OR, USA, {nguynam4}@oregonstate.edu \\
+}
+
+\maketitle
+\thispagestyle{plain}
+\pagestyle{plain}
+
+%\begin{abstract}
+%\input{files/tex/Abstract}
+%\end{abstract}
+
+%\begin{IEEEkeywords}
+%Index term 1, index term 2, etc.
+%\end{IEEEkeywords}
+
+\section{Information}
+\begin{enumerate}
+\item Name: Nam Nguyen (nguynam4@oregonstate.edu)
+\item Research Interests:
+	\begin{itemize}
+	\item Free-space optical communication systems: modulation techniques, channel models, and system performance
+analysis
+
+	\item Free-space quantum key distribution networks: design, analysis, and optimization of link-layer retransmissions
+and relaying techniques
+
+	\end{itemize}
+	
+My current studies are on free-space quantum key distribution networks and appeared in some papers:
+
+\begin{itemize}
+\item \underline{\textbf{Nam D. Nguyen}}, Hang T. T. Phan, Hien T. T. Pham, Vuong V. Mai, and Ngoc T. Dang, \textcolor[rgb]{0,0,0.45}{"Reliability Improvement of Satellite-based Quantum Key Distribution Systems using Retransmission Scheme,"} \textit{Photonic Network Communications}, Vol. 42, No.1, pp. 27-39, Aug. 2021.
+
+\item \underline{\textbf{Nam D. Nguyen}}, Hien T. T. Pham, Vuong V. Mai, and Ngoc T. Dang, \textcolor[rgb]{0,0,0.45}{"Comprehensive Performance Analysis of Satellite-to-Ground FSO/QKD Systems using Key Retransmission,"} \textit{Optical Engineering}, Vol. 59, No. 12, pp. 126102-1-25, Dec. 2020.
+
+\end{itemize}
+
+\item Graduate Student at School of Electrical and Computer Engineering of Oregon State University
+
+\end{enumerate}
+
+\section{Title of the project}
+{\bf
+\begin{center}
+\enquote{Performance Enhancement and Security Analysis of Satellite FSO/QKD Systems using HAP-based Relaying and ARQ}
+\end{center}
+}
+
+\section{Project description}
+\subsection{Problem Statement}
+The desire to connect everything over the Internet requires secure communication to prevent unauthorized access, stealing and changing information. Quantum key distribution (QKD), a well-known protocol based on the rule of quantum physics to share the secret key via two lawful parties (namely Alice and Bob) with an eavesdropper (namely Eve), is a promising method that meets the requirements \cite{Yuen2016}. A global-scale QKD network can be implemented utilizing satellite-to-ground free-space optical (FSO) links and several proof-of-principle experiments have been performed recently. However, the performance of satellite QKD systems is degraded by atmospheric channels including scattering, absorption, and atmospheric turbulence \cite{Vallone2015, Liao2018}. Due to these factors, even if no eavesdropper existed, the quantum key error rate (QKER) may be very high under strong turbulence. 
+
+\subsection{Motivation}
+To reduce QKER, the reconciliation process based on the forward error correction (FEC) has been proposed in \cite{Buttler2003} and further developed in \cite{Ai2020}. Nevertheless, highly computational algorithms are needed for optimizing FEC redundancy and, more importantly, FEC-only techniques are not robust enough to guarantee reliability due to relatively long-distance transmissions from satellite to ground stations.
+
+The purposes of this research are to design satellite FSO/QKD systems that can effectively distribute the secret keys between two parties living far away and investigate the feasibility and reliability of the proposed system. If a designed satellite FSO/QKD system can offer considerable performance improvement over the conventional ones, it could largely contribute to the possibility of a global QKD network for secure communication.
+
+\subsection{Solution Approach}
+The main objective of this project is to explore additional techniques to improve the performances of satellite FSO/QKD systems. I am first going to strengthen the physical layer by considering a relaying technique based on a high-altitude platform (HAP). Here, a relaying node is located at a HAP that recovers the quantum keys transmitted from a satellite and forwards those keys to a ground station. Thanks to the HAP-based relaying technique, the signal is regenerated and thus the QKER will be reduced. 
+
+Also, I am going to propose to improve the link layer by considering a key-retransmission technique, namely automatic repeat request (ARQ). Unlike the FEC technique, in which key errors are corrected based on the redundancy added to quantum keys to reduce QKER in the reconciliation process, the link-layer ARQ technique retransmits unsuccessfully keys to assure QKD reliability. Therefore, the ARQ technique does not require high computational algorithms for error control.
+
+For the security analysis, the ergodic secret-key rate and final key-creation rate will be obtained in closed-form expressions.
+
+\subsection{Evaluation Method}
+The methods of research in this research plan are using the mathematical model, theoretical analysis, and Monte-Carlo simulation (using Matlab) of the proposed free-space quantum key distribution system.
+
+\subsection{High-Level Execution Plan}
+
+\begin{itemize}
+\item Phase 1:
+
+	\begin{itemize}
+	\item Fundamental of QKD and relaying FSO communication systems
+	
+	\item Studying the operation and architecture of high-altitude platform (HAP)-based relaying systems
+	
+	\item Studying the performance of satellite FSO/QKD systems with the influences of the atmospheric channel 
+	
+	\item Studying the link-layer automatic repeat request (ARQ) techniques
+	\end{itemize}
+
+\item Phase 2:
+	
+	\begin{itemize}
+	\item Proposing the satellite FSO/QKD systems using HAP-based relaying and ARQ
+	
+	\item Proposing the architecture of the proposed system including the transmitter, the HAP-based relay node, and the receiver
+	
+	\item Proposing the channel model with atmospheric turbulence
+	
+	\end{itemize}
+
+\item Phase 3:
+
+	\begin{itemize}
+	\item Investigating the performance and security analysis of the proposed system in terms of key loss rate, delay outage rate, ergodic secret-key rate, and final key-creation rate
+	
+	\item Comparing with conventional QKD systems
+	
+	\item Completing project final report and presenting
+	\end{itemize}
+
+\end{itemize}
+
+\bibliographystyle{IEEEtran}
+\bibliography{References}
+%\bibliographystyle{main}
+
+\begin{thebibliography}{99}
+\bibitem{Yuen2016}
+H. P. Yuen, 
+\enquote{Security of quantum key distribution,}
+\emph{IEEE Access,} vol. 4, pp. 724--749, 2016.
+
+\bibitem{Vallone2015}
+G. Vallone et. al., 
+\enquote{Experimental satellite quantum communications,}
+\emph{Phys. Rev. Lett.} 115(4), 040502, 2015.
+
+\bibitem{Liao2018}
+S.-K. Liao et. al., 
+\enquote{Satellite-relayed intercontinental quantum network,}
+\emph{Phys. Rev. Lett.} 120(3), 030501, 2018.
+
+\bibitem{Buttler2003}
+W.T. Buttler et. al., 
+\enquote{Fast efficient error reconciliation for quantum cryptography,}
+\emph{Phys. Rev. A,} vol. 67, No. 5, p. 052303, 2003.
+
+\bibitem{Ai2020}
+X. Ai et. al., 
+\enquote{A reconciliation strategy for real-time satellite-based QKD,} 
+\emph{IEEE Wireless Commun. Lett.,} vol. 24, no. 5, pp. 1062--1066, May 2020. 
+
+\end{thebibliography}
+
+\end{document}
