@@ -3,7 +3,7 @@
 
 ## **Description**
 
-This repository contains the source code and documentation for my final project and research papers.
+This repository contains the source code and documentation of my final project for ECE-563-Wireless-Communications-Network.
 
 ---
 
